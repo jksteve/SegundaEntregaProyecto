@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preload -->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>BarberShop LaHermandad</title>
+</head>
+
+<body>
+    <header class="header">
+        <a class="titulo" href="index.html">
+            <h1>La <br> Hermandad</h1>
+        </a>
+        <a class="icons" href="e-shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a class="icons" href="Reservacion.html"><i class="fa-solid fa-calendar-days"></i></a>
+        <label class="fa-solid fa-bars btn-chk" for="btn-check"></label>
+
+        <nav class="navegacion-principal">
+            <ul class="navegacion-principal-lista">
+                <a href="Nosotros.html">Nosotros</a>
+                <a href="e-shop.html">E-Shop</a>
+                <div class="caja">
+                    <a href="Reservacion.html">Reservacion <i class="fa-solid fa-calendar-days"></i></a>
+                </div>
+                <a href="e-shop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-reserv contenedor">
+        <input type="checkbox" id="btn-check" >
+        <section class="desplegable">
+            
+            <div class="cont-nav">
+                <nav class="nav-desplegable">
+                    <a href="index.html">Bienvenida</a>
+                    <a href="Nosotros.html">Nosotros</a>
+                    <a href="Reservacion.html">Reservacion</a>
+                    <a href="e-shop.html">E-Shop</a>
+                </nav>
+                <label for="btn-check" class="equis">X</label>
+            </div>
+        </section>
+        <div class="container cont-calendar">
+
+            <h2 class="title">Mayo</h2>
+
+            <ul class="calendar">
+
+                <li class="day-name">S</li>
+                <li class="day-name">M</li>
+                <li class="day-name">T</li>
+                <li class="day-name">W</li>
+                <li class="day-name">T</li>
+                <li class="day-name">F</li>
+                <li class="day-name">S</li>
+
+                <li class="day first-day gout">27</li>
+                <li class="day gout">28</li>
+                <li class="day gout">29</li>
+                <li class="day gout">30</li>
+                <li class="day morado m-oscuro">1</li>
+                <li class="day morado">2</li>
+                <li class="day morado">3</li>
+                <li class="day morado">4</li>
+                <li class="day morado">5</li>
+                <li class="day morado">6</li>
+                <li class="day morado">7</li>
+                <li class="day morado">8</li>
+                <li class="day morado">9</li>
+                <li class="day morado">10</li>
+                <li class="day morado">11</li>
+                <li class="day morado">12</li>
+                <li class="day morado">13</li>
+                <li class="day morado">14</li>
+                <li class="day morado m-oscuro">15</li>
+                <li class="day verde v-oscuro">16</li>
+                <li class="day verde">17</li>
+                <li class="day verde">18</li>
+                <li class="day verde">19</li>
+                <li class="day verde">20</li>
+                <li class="day verde">21</li>
+                <li class="day verde">22</li>
+                <li class="day verde">23</li>
+                <li class="day verde">24</li>
+                <li class="day verde">25</li>
+                <li class="day verde">26</li>
+                <li class="day verde">27</li>
+                <li class="day verde">28</li>
+                <li class="day verde">29</li>
+                <li class="day verde">30</li>
+                <li class="day verde v-oscuro">31</li>
+            </ul>
+            <!--Contrainer-->
+        </div>
+
+        <form action="" class="form">
+            <fieldset>
+                <legend>Reservacion de cita</legend>
+                <label for="">Hora</label>
+                <input type="time" name="Hora" id="hora">
+    
+                <label for="">Tipo de Servicio</label>
+                <select name="servicios" id="servicio">
+                    <option value="Seleccione">Elija un servicio</option>
+                    <option value="SoloCorte">Solo corte</option>
+                    <option value="CorteYBarba">Coste y Barba</option>
+                    <option value="SoloBarba">Solo barba</option>
+                </select>
+    
+                <label for="">Desea una bebida?</label>
+                <input class="chkbx" type="checkbox" name="bebida" id="bebida">
+    
+                <label for="">Bebida</label>
+                <select name="servicios" id="servicio">
+                    <option value="Seleccione">Elija una bebida</option>
+                    <option value="SoloCorte">Imperial</option>
+                    <option value="CorteYBarba">Pilsen</option>
+                    <option value="SoloBarba">whiskey</option>
+                    <option value="SoloBarba">Ron</option>
+                </select>
+    
+                <label for="">Comentario adicional</label>
+                <textarea name="comentario" id=""></textarea>
+            </fieldset>
+            <input class="boton-env" type="submit" value="Reservar">
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados - Jake Fernandez B</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/8414a06cf9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

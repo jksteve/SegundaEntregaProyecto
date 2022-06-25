@@ -1,0 +1,896 @@
+:root {
+    --fuente-principal: 'Adamina', serif;
+    --fuente-titulo: 'Rubik Glitch', cursive;
+
+    /* Paleta de colores */
+    --negro: #000000;
+    --blanco: #ffffff;
+    --rojo: #ff0000;
+
+
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+    background-color: rgb(22, 22, 22);
+    color: var(--blanco);
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.6rem;
+}
+
+br {
+    display: inline-block;
+    padding: 0;
+    margin-top: 0px;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--negro);
+
+}
+
+a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 0 1rem;
+}
+
+.navegacion-principal {
+    text-transform: uppercase;
+
+
+}
+
+.navegacion-principal-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.navegacion-principal-lista a {
+    color: white;
+    transition: border linear 2s;
+    position: relative;
+}
+
+.navegacion-principal-lista a:hover {
+    background-color: #1c1c1c;
+    color: white;
+    font-weight: bold;
+}
+
+.navegacion-principal-lista a::after {
+
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .3rem;
+    left: 0;
+    bottom: 0;
+    background: red;
+    transform: scale(0, 1);
+}
+
+.navegacion-principal-lista a:hover::after {
+    transform: scale(1, 1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+}
+
+
+
+.titulo {
+    font-size: 5rem;
+    font-family: var(--fuente-titulo);
+    color: var(--blanco);
+    margin: 2rem;
+    line-height: 1;
+    text-align: center;
+
+}
+
+@media (max-width: 480px) {
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navegacion-principal {
+        display: none;
+    }
+
+    .header .titulo h1 {
+        font-size: 1.5rem;
+        align-items: left;
+    }
+}
+
+.caja {
+    display: inline-block;
+    border: 2px solid #ffffff;
+    padding: 1rem;
+}
+
+/* DESPLEGABLE */
+
+#btn-check {
+    display: none;
+
+}
+
+.btn-chk {
+    cursor: pointer;
+}
+
+.desplegable {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-check:checked~.desplegable {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-nav {
+    width: 100%;
+    max-width: 250px;
+    background-color: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+
+}
+
+.nav-desplegable {
+    transform: translateY(15%);
+
+}
+
+.nav-desplegable a {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: var(--blanco);
+    border-left: 5px solid transparent;
+    transition: all 1s ease;
+}
+
+.nav-desplegable a:hover {
+    border-left: 5px solid #c7c7c7;
+    background-color: #1f1f1f;
+
+}
+
+.equis {
+    background-color: #969696;
+    color: var(--negro);
+    padding: .5rem .8rem;
+    border-radius: 10%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+/* *********** */
+/* main */
+.main {
+    background-image: url(../img/bg-main2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+
+}
+
+
+
+.titulo-main {
+    margin: 0;
+    padding-top: 30%;
+    font-size: 10rem;
+    font-family: var(--fuente-titulo);
+    line-height: 1;
+    text-align: center;
+    animation-duration: 2s;
+    animation-name: tituloMain;
+
+}
+
+@keyframes tituloMain {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480pc) {
+    .titulo-main {
+        font-size: 5rem;
+
+    }
+
+    .contenido-main-bg {
+        padding-top: 30%;
+    }
+}
+
+/* 
+.caja-roja {
+    position: relative;
+    width: 18rem;
+    height: 30rem;
+    background-color: var(--rojo);
+} */
+
+/* SECTION INFORMACION */
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+}
+
+.contenido-linea {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.linea {
+    background-color: var(--rojo);
+    width: 20px;
+    height: 4px;
+    margin-right: 1rem;
+}
+
+@media (max-width: 480px) {
+
+    .info h2,
+    .info .contenido-linea {
+        grid-column: 1/3;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+
+    .img-p {
+        max-width: 90%;
+        grid-column: 1/3;
+        margin: 0 auto;
+    }
+
+    .caja {
+        display: inline-block;
+        grid-column: 1/3;
+        text-align: center;
+    }
+
+    .all {
+        grid-column: 1/3;
+    }
+}
+
+.img-p {
+    /* position: absolute;
+    top: -5%;
+    left: 10%; */
+    box-shadow: -10px 10px 0px red;
+
+}
+
+.img-pr {
+    /* position: absolute;
+    top: -5%;
+    left: 10%; */
+    border-radius: 50%;
+    box-shadow: -20px 10px 0px red;
+
+}
+
+.contactanos {
+    text-transform: uppercase;
+}
+
+/* footer */
+.footer {
+    text-align: center;
+
+}
+
+/* Nosotros */
+.fa-brands,
+.fa-whatsapp {
+    color: green;
+}
+
+/* e-shop */
+
+.item {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8rem;
+}
+
+/* RESERVACIONES */
+.main-reserv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 5rem;
+}
+
+.container {
+    margin: 5em auto;
+    width: 700px;
+
+
+}
+
+.title {
+    text-align: center;
+    margin: .2em 0;
+    color: var(--blanco);
+    font-size: 3em;
+    text-shadow: 1px 3px 0 #969696, -8px 15px 5px #aba8a8;
+
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    border-radius: 25%;
+
+}
+
+.day {
+    list-style: none;
+    text-align: center;
+    padding: .3em .5em;
+    border: 1px solid #ddd;
+    border-radius: 25%;
+    height: 4em;
+    padding-top: 1em;
+    background-color: var(--blanco);
+    color: var(--negro);
+    font-weight: 700;
+    font-size: 1.8em;
+}
+
+.day-name {
+    font-weight: 700;
+    text-align: center;
+    list-style: none;
+}
+
+.form fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10rem;
+    margin: 0;
+    padding: 1rem;
+    gap: 1.5rem;
+    border: 1px solid rgb(59, 59, 59);
+    font-family: var(--fuente-principal);
+}
+
+label {
+    grid-column: 1/2;
+}
+
+input,
+select,
+textarea {
+    border: none;
+    border-radius: .5rem;
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+
+.chkbx {
+    -ms-transform: scale(1.5);
+    /* IE */
+    -moz-transform: scale(1.5);
+    /* FF */
+    -webkit-transform: scale(1.5);
+    /* Safari y Chrome */
+    -o-transform: scale(1.5);
+    /* Opera */
+    padding: 10%;
+}
+
+textarea {
+    height: 15rem;
+}
+
+.boton-env {
+    border: none;
+    border-radius: 1rem;
+    margin: 0;
+    padding: 2rem 2rem 3rem 2rem;
+    text-align: center;
+    font-family: var(--fuente-principal);
+    font-weight: bold;
+    background-color: rgb(123, 204, 70);
+}
+
+.boton-env:hover {
+    background-color: rgb(91, 143, 56);
+    cursor: pointer;
+}
+
+.gout {
+    color: #969696;
+}
+
+.morado {
+    background-color: #b376c5;
+}
+
+.verde {
+    background-color: aquamarine;
+}
+
+.day:hover {
+    background-color: #969696;
+}
+
+.m-oscuro {
+    background-color: #9229b3;
+}
+
+@media (max-width: 480px) {
+    
+
+    .item {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        margin: 60px;
+    }
+
+    .caja {
+        padding-bottom: 2rem;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    .hr-item {
+        color: var(--blanco);
+        width: 100%;
+    }
+
+    .main-reserv {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .cont-calendar {
+
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .calendar {
+
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .day {
+        list-style: none;
+        text-align: center;
+        padding: .1em .3em;
+        border: 1px solid #ddd;
+        border-radius: 25%;
+        height: 2em;
+        padding-top: .2em;
+        background-color: var(--blanco);
+        color: var(--negro);
+        font-weight: 700;
+        font-size: 1.8em;
+    }
+
+    .form {
+        grid-row: 2/3;
+        row-gap: 1rem;
+        text-align: center;
+        padding: 3rem;
+    }
+
+    .form label,
+    .form input,
+    .form select {
+        height: 2.5rem;
+        margin-top: 2rem;
+
+    }
+
+    .gout {
+        color: #969696;
+    }
+
+    .morado {
+        background-color: #b376c5;
+    }
+
+    .verde {
+        background-color: aquamarine;
+    }
+
+    .day:hover {
+        background-color: #969696;
+    }
+
+    .m-oscuro {
+        background-color: #9229b3;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navegacion-principal {
+        display: none;
+    }
+
+    .header .titulo h1 {
+        font-size: 2rem;
+        align-items: left;
+    }
+
+    /* NOSOTROS */
+    .info h2,
+    .info .contenido-linea {
+        grid-column: 1/3;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+
+    .img-p {
+        max-width: 70%;
+        height: 80%;
+        grid-column: 1/3;
+        margin: 0 auto;
+    }
+
+    .caja {
+        display: inline-block;
+        grid-column: 1/3;
+        text-align: center;
+    }
+
+    .all {
+        grid-column: 1/3;
+    }
+
+    /* reservaciones */
+
+    .item {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        margin-left: 50%;
+    }
+
+    .caja {
+        padding-bottom: 2rem;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    .hr-item {
+        color: var(--blanco);
+        width: 100%;
+    }
+
+    .main-reserv {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 100%;
+    }
+
+    .cont-calendar {
+
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .calendar {
+
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+
+    .day {
+        list-style: none;
+        text-align: center;
+        max-width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 25%;
+        height: 8rem;
+        padding-top: .2em;
+        background-color: var(--blanco);
+        color: var(--negro);
+        font-weight: 700;
+        font-size: 1.8em;
+    }
+
+    .form {
+        grid-row: 2/3;
+        row-gap: 1rem;
+        text-align: center;
+        padding: 3rem;
+    }
+
+    .form label,
+    .form input,
+    .form select {
+        height: 2.5rem;
+        margin-top: 2rem;
+
+    }
+
+    .gout {
+        color: #969696;
+    }
+
+    .morado {
+        background-color: #b376c5;
+    }
+
+    .verde {
+        background-color: aquamarine;
+    }
+
+    .day:hover {
+        background-color: #969696;
+    }
+
+    .m-oscuro {
+        background-color: #9229b3;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .icons {
+        display: none;
+    }
+
+    .icons:hover {}
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .header .btn-chk {
+        display: none;
+    }
+
+    .main {
+        height: 580px;
+    }
+    .main-eShop {
+        height: 80vh;
+    }
+    .titulo-main {
+        padding-top: 100px;
+    }
+
+
+    /* NOSOTROS */
+    .info h2,
+    .info .contenido-linea {
+        grid-column: 1/3;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+
+    .img-p {
+        max-width: 70%;
+        height: 80%;
+        grid-column: 1/3;
+        margin: 0 auto;
+    }
+
+    .caja {
+        display: inline-block;
+        grid-column: 1/3;
+        text-align: center;
+            
+    }
+
+    .all {
+        grid-column: 1/3;
+    }
+
+    /* reservaciones */
+    .info {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .item {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+
+    }
+
+    hr {
+        display: none;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    .hr-item {
+        color: var(--blanco);
+        width: 100%;
+    }
+
+    .main {
+        height: 100vh;
+    }
+
+    .main-reserv {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 100%;
+    }
+
+    .cont-calendar {
+
+        width: 100%;
+        padding-top: 10%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .calendar {
+
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+
+    .day {
+        list-style: none;
+        text-align: center;
+        max-width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 25%;
+        height: 100%;
+        padding-top: .2em;
+        background-color: var(--blanco);
+        color: var(--negro);
+        font-weight: 700;
+        font-size: 1.8em;
+    }
+
+    .form {
+        grid-row: 2/3;
+        row-gap: 1rem;
+        text-align: center;
+        padding: 3rem;
+    }
+
+    .form label,
+    .form input,
+    .form select {
+        height: 2.5rem;
+        margin-top: 2rem;
+
+    }
+
+    .gout {
+        color: #969696;
+    }
+
+    .morado {
+        background-color: #b376c5;
+    }
+
+    .verde {
+        background-color: aquamarine;
+    }
+
+    .day:hover {
+        background-color: #969696;
+    }
+
+    .m-oscuro {
+        background-color: #9229b3;
+    }
+
+}
